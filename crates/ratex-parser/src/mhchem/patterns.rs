@@ -315,7 +315,7 @@ fn pattern_amount<'a>(
     let MatchToken::S(ref s) = h.token else {
         return Ok(None);
     };
-    if RE_AMOUNT_DOLLAR.find(s).ok().flatten().is_some() {
+    if RE_AMOUNT_DOLLAR.find(s.as_ref()).ok().flatten().is_some() {
         Ok(Some(PatternHit {
             token: h.token,
             remainder: h.remainder,
