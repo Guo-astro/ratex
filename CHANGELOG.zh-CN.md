@@ -15,6 +15,12 @@
 - 依赖：`phf` 升至 0.13，`fancy-regex` 升至 0.20，与常见 GUI 依赖链一致，宿主不再各编译两份。
 - `ratex-katex-fonts` 改用 `include_bytes!` 嵌入字体，不再依赖 `rust-embed` 及其 `sha2` 0.11 依赖树。`ttf_bytes` 签名不变。
 
+### 新增
+
+- `ratex-parser` 新增可选的 `mhchem` cargo feature（默认开启），所有依赖它的 crate 均转发该 feature。
+  关闭默认 feature 即可构建不含 `\ce` / `\pu` 及 `regex` / `fancy-regex` 依赖的版本。
+  详见 README 的“不含 mhchem 的构建”。
+
 ## [0.1.15] - 2026-10-16
 
 ### 兼容性
