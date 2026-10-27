@@ -11,6 +11,14 @@ section.
 
 ## [Unreleased]
 
+### Changed
+
+- Dependencies: `phf` 0.13 and `fancy-regex` 0.20, the versions current
+  GUI stacks already link, so hosts no longer build two copies of each.
+- `ratex-katex-fonts` embeds its fonts with `include_bytes!` instead of
+  `rust-embed`, dropping `rust-embed` and its `sha2` 0.11 tree. `ttf_bytes`
+  keeps its signature.
+
 ### Added
 
 - Optional `mhchem` cargo feature (default on) for `ratex-parser`, forwarded by every crate that
